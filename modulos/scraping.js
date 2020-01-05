@@ -4,9 +4,13 @@ const request = require('request')
 function scraping() {
   request({
     method: 'GET',
-    url: https://www.youtube.com/user/pedropachecoa/videos
+    url: 'https://www.youtube.com/user/pedropachecoa/videos'
   }, (err, res, body) => {
     if (err) return console.log(err)
     const $ = cheerio.load(body)
+    const title = $('a').text()
+    console.log(title)
   })
 }
+
+scraping()
